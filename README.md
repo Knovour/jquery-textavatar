@@ -7,17 +7,18 @@ Let user name become an simple text avatar
 Load **textavatar.css** or just combine it in your css file.
 
 jQuery needed.
-```
+```html
 <div class='textavatar' style='width: 140px;' data-name='NAME INSIDE'></div>
 <script src="jquery.textavatar.js"></script>
+```
+```javascript
 $('.textavatar').textAvatar();
 ```
 
 #### Options
 There is only **width** and **name** now.
-```
-<div class=js-option></div>
-$('.js-option').textAvatar({
+```javascript
+$('DIV-NAME').textAvatar({
     width: 120, //no need to type 'px'
     name: NAME HERE
 });
