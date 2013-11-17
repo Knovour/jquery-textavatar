@@ -1,0 +1,17 @@
+.textavatar {
+	display: table;
+}
+
+.textavatar abbr {
+	display: table-cell;
+	text-align: center;
+	vertical-align: middle;
+	font-weight: bold;
+	line-height: 1em;
+	padding-left: .1em;
+	letter-spacing: .1em;
+
+	/* Avoid Bootstrap css*/
+	border-bottom: 0 !important;
+	cursor: default !important;
+}
