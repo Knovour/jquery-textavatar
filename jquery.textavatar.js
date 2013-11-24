@@ -1,11 +1,11 @@
 // Text Avatar v0.0.1, 2013/10/14, Knovour Zheng
 (function ($) {
-	'use strict'
+	'use strict';
 
 	var _oneWord = 26; //26px
 	$.fn.textAvatar = function(options) {
 		var _abbrTemplate = '<abbr title="_name_">_text_avatar_</abbr>';
-		var _reg = /^[\u4e00-\u9fa5]+$/i; //check chinese character in it or not
+		var _reg = /[\u4E00-\u9FA5\uF900-\uFA2D]/i; //check Chinese, Japenese & Korean character
 
 		var _contentLength = this.length;
 		for(var i = 0; i < _contentLength; i++) {
