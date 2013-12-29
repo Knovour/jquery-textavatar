@@ -80,12 +80,18 @@ pre {
 */
 
 header h1,
-header h1 .inline {
+header h1 .inline,
+header h1 .inline .textavatar {
   margin: 0;
 }
 
-header h1 span {
-  vertical-align: top;
+header h1 .inline {
+  margin-bottom: -1px;
+}
+
+header h1 span,
+header h1 .inline {
+  vertical-align: bottom;
 }
 
 #main-nav {
