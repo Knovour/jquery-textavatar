@@ -4,97 +4,162 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
     <title>Jquery-textavatar by Knovour</title>
-
+    
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.min.css">
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
   </head>
   <body>
-    <div class="wrapper">
-      <header>
-        <h1>Jquery-textavatar</h1>
-        <p>Let user name become an simple text avatar</p>
-
-        <p class="view"><a href="https://github.com/Knovour/jquery-textavatar">View the Project on GitHub <small>Knovour/jquery-textavatar</small></a></p>
-
-
-        <ul>
-          <li><a href="https://github.com/Knovour/jquery-textavatar/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/Knovour/jquery-textavatar/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="https://github.com/Knovour/jquery-textavatar">View On <strong>GitHub</strong></a></li>
-        </ul>
-      </header>
-      <section>
-        <h1>
-<a name="jquery-text-avatar" class="anchor" href="#jquery-text-avatar"><span class="octicon octicon-link"></span></a>jQuery Text Avatar</h1>
-
-<p>Let user name become an simple text avatar</p>
-
-<h4>
-<a name="demo-site" class="anchor" href="#demo-site"><span class="octicon octicon-link"></span></a><a href="http://textavatar.droppages.com/">Demo Site</a>
-</h4>
-
-<h2>
-<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
-
-<p>Load <strong>textavatar.css</strong> or just combine it in your css file.</p>
-
-<p>jQuery needed.</p>
-
-<div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'textavatar'</span> <span class="na">style=</span><span class="s">'width: 140px;'</span> <span class="na">data-name=</span><span class="s">'NAME INSIDE'</span><span class="nt">&gt;&lt;/div&gt;</span>
-<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.textavatar.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
-</pre></div>
-
-<div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.textavatar'</span><span class="p">).</span><span class="nx">textAvatar</span><span class="p">();</span>
-</pre></div>
-
-<h4>
-<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h4>
-
-<p>There is only <strong>width</strong> and <strong>name</strong> now.</p>
-
+    <div class="container">
+      <div class="row banner">
+        <header class="col-lg-12">
+          <div class="pull-left">
+            <h1 class='simple-title'>
+              <div class='inline'><div class='textavatar' style='width: 40px;' data-name='Jquery Textavatar'></div></div>
+              
+              <span>Jquery-textavatar</span>
+            </h1>
+<!--            <h1 class='simple-title'>Jquery-textavatar</h1>-->
+            <p>Let user name become a simple text avatar</p>
+          </div>
+          <div class="pull-right">
+            <div class="btn-group">
+              <a href="https://github.com/Knovour/jquery-textavatar/zipball/master" class="btn btn-default btn-lg"><i class="fa fa-cloud-download"></i><strong> ZIP File</strong></a>
+              <a href="https://github.com/Knovour/jquery-textavatar/tarball/master" class="btn btn-default btn-lg"><i class="fa fa-cloud-download"></i><strong> TAR Ball</strong></a>
+              <a href="https://github.com/Knovour/jquery-textavatar" target="_blank" class="btn btn-default btn-lg"><i class="fa fa-github-alt"></i><strong> Github</strong></a>
+            </div>
+          </div>
+          <div class="clearfix"></div>
+        </header>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
+          <ul id='main-nav' class="nav nav-pills nav-stacked">
+            <li class="active"><a href="#try">Try it!</a></li>
+            <li><a href="#usage">Usage</a></li>
+            <li><a href="#demo">Demo</a></li>
+            <li><a href="#license">License</a></li>
+          </ul>
+          <footer class='hidden-xs hidden-sm'>
+            <p>Project maintained by <a href="https://github.com/Knovour">Knovour</a></p>
+            <p><small>Theme refer from <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+          </footer>
+        </div>
+        <div class="col-xs-12 col-sm-9 col-md-9 col-lg-9">
+          <div id="scroll-spy" data-spy="scroll" data-offset="0" data-target="#main-nav">
+            <h2 id="try" class="simple-title">Try it!</h2>
+            <hr>
+            <form class='form-inline row'>
+              <div class="form-group col-xs-12 col-sm-12 col-md-7 col-lg-7">
+                <label for="name">Type Your Name (Chinese or English)：</label>
+                <input id='name' class='form-control' name='name' type='text' placeholder='name'>
+              </div>
+              <div class="form-group col-xs-12 col-sm-12 col-md-4 col-lg-4">
+                <br class="visible-sm">
+                <label for="size">Avatar Size (default = 48)：</label>
+                <input id='size' class='form-control' type="number" name='size' value=48>
+              </div>
+            </form>
+            <div id="test" class='textavatar' style='margin-top: 16px; display: none'></div>
+            <br>
+            <br>
+            <h2 id="usage" class="simple-title">Usage</h2>
+            <hr>
+            <p>Load <strong>textavatar.css</strong> or just combine it in your css file.</p>
+            <p>jQuery needed.</p>
+            <div class="highlight highlight-html"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">'textavatar'</span> <span class="na">style=</span><span class="s">'width: 140px;'</span> <span class="na">data-name=</span><span class="s">'NAME INSIDE'</span><span class="nt">&gt;&lt;/div&gt;</span><br><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"jquery.textavatar.js"</span><span class="nt">&gt;&lt;/script&gt;</span></pre></div><br>
+            <div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'.textavatar'</span><span class="p">).</span><span class="nx">textAvatar</span><span class="p">();</span></pre></div>
+            <br>
+            <h3>Options</h3>
+            <p>There is only <strong>width</strong> and <strong>name</strong> now.</p>
 <div class="highlight highlight-javascript"><pre><span class="nx">$</span><span class="p">(</span><span class="s1">'DIV-NAME'</span><span class="p">).</span><span class="nx">textAvatar</span><span class="p">({</span>
     <span class="nx">width</span><span class="o">:</span> <span class="mi">120</span><span class="p">,</span> <span class="c1">//no need to type 'px'</span>
     <span class="nx">name</span><span class="o">:</span> <span class="nx">NAME</span> <span class="nx">HERE</span>
-<span class="p">});</span>
-</pre></div>
-
-<h2>
-<a name="the-mit-license-mit" class="anchor" href="#the-mit-license-mit"><span class="octicon octicon-link"></span></a>The MIT License (MIT)</h2>
-
-<p>Copyright (c) 2013 Knovour Zheng</p>
-
-<p>Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:</p>
-
-<p>The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.</p>
-
-<p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.</p>
-
-<blockquote>
-<p>Written with <a href="https://stackedit.io/">StackEdit</a>.</p>
-</blockquote>
-      </section>
-      <footer>
-        <p>This project is maintained by <a href="https://github.com/Knovour">Knovour</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
-      </footer>
+<span class="p">});</span></pre></div>
+          <br>
+          <br>
+          <h2 id="demo" class="simple-title">Demo</h2>
+          <hr>
+          <h3>English</h3>
+          <h5>It will show only one word in small size (&lt;= 26px)</h5>
+          <div class='inline'>
+              <div class='textavatar' style='width: 80px;' data-name='Steve Rogers'></div>
+              <span>Steve Rogers</span>
+          </div>
+      
+          <div class='inline'>
+              <div class='textavatar' style='width: 100px;' data-name='Tony Stark'></div>
+              <span>Tony Stark</span>
+          </div>
+      
+          <div class='inline'>
+              <div class='textavatar' style='width: 80px;' data-name='Thor Odinson'></div>
+              <span>Thor Odinson</span>
+          </div><div class='inline'>
+          <div class='textavatar' style='width: 26px;' data-name='Loki Laufeyson'></div>
+              <span>Loki Laufeyson</span>
+          </div>
+          <h3 style='margin-top: 52px'>Chinese 中文</h3>
+          <h5>It will show only one word in Chinese. 中文字僅顯示一個字。</h5>
+          <div class='inline chinese-word'>
+              <div class='textavatar' style='width: 100px;' data-name='強尼戴普'></div>
+              <span>強尼戴普</span>
+          </div>
+          <div class='inline chinese-word'>
+              <div class='textavatar' style='width: 100px;' data-name='莫那魯道'></div>
+              <span>莫那魯道</span>
+          </div>
+          <div class='inline chinese-word'>
+              <div class='textavatar' style='width: 80px;' data-name='無名氏'></div>
+              <span>無名氏</span>
+          </div>
+          <div class='inline chinese-word'>
+              <div class='textavatar' style='width: 20px;' data-name='水母'></div>
+              <span>水母</span>
+          </div>
+          <br>
+          <br>
+          <h2 id="license">License</h2>
+          <hr>
+          <h3><a name="the-mit-license-mit" class="anchor" href="#the-mit-license-mit"><span class="octicon octicon-link"></span></a>The MIT License (MIT)</h3>
+          
+          <p>Copyright (c) 2013 Knovour Zheng</p>
+          
+          <p>Permission is hereby granted, free of charge, to any person obtaining a copy
+          of this software and associated documentation files (the "Software"), to deal
+          in the Software without restriction, including without limitation the rights
+          to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+          copies of the Software, and to permit persons to whom the Software is
+          furnished to do so, subject to the following conditions:</p>
+          
+          <p>The above copyright notice and this permission notice shall be included in
+          all copies or substantial portions of the Software.</p>
+          
+          <p>THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+          IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+          FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+          AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+          LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+          OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+          THE SOFTWARE.</p>
+          </div>
+          <footer class='visible-xs visible-sm'>
+            <p>Project maintained by <a href="https://github.com/Knovour">Knovour</a></p>
+            <p><small>Theme refer from <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+          </footer>
+        </div>
+      </div>
     </div>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery.nicescroll/3.5.1/jquery.nicescroll.min.js"></script>
+    <script src="javascripts/jquery.textavatar.js"></script>
+    <script src="javascripts/demo.js"></script>
     <script src="javascripts/scale.fix.js"></script>
-    
   </body>
 </html>
