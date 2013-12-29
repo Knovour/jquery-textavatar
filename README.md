@@ -1,7 +1,7 @@
 jQuery Text Avatar
 =================
 Let user name become an simple text avatar
-#### [Demo Site]
+#### [Site]
 
 ## Usage
 Load **textavatar.css** or just combine it in your css file.
@@ -50,4 +50,4 @@ THE SOFTWARE.
 
 > Written with [StackEdit](https://stackedit.io/).
 
-[Demo Site]: http://textavatar.droppages.com/
+[Site]: http://knovour.github.io/jquery-textavatar
