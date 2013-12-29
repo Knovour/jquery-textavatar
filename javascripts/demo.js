@@ -1,6 +1,5 @@
 $('.textavatar').textAvatar();
 $('#scroll-spy').niceScroll({
-  boxzoom: true,
   horizrailenabled: false,
   cursorwidth: '8'
 });
@@ -29,6 +28,36 @@ $('#main-nav a').click(function(e) {
   e.preventDefault();
   switchTo(this.hash);
   tabSwitch($(this));
+});
+
+$('#scroll-spy').scroll(function(e) {
+  var $h2 = $(this).find('.simple-title');
+  var length = $h2.length;
+  
+  for(var i = 0; i < length; i++) {
+    var $temp1 = $h2.eq(i);
+    
+    if((length - i) > 1) {
+      var $temp2 = $h2.eq(i + 1);
+      
+      var topPosition1 = $temp1.position().top;
+      var topPosition2 = $temp2.position().top;
+      if(topPosition1 <= 0 && topPosition2 >= 0) {
+        var top = Math.abs(topPosition1);
+        var hash = '#';
+        var $choose = (top < topPosition2) ? $temp1 : $temp2;
+        hash += $choose.attr('id');
+
+        //window.location.hash = hash;
+        tabSwitch($('a[href=' + hash + ']'));
+        
+        break;
+      }
+    }
+    
+    else if((length - i) === 1) //I have no idea why this work
+      tabSwitch($('a[href=#license]'));
+  }
 });
 
 function urlSwitch(idFromUrl) {
