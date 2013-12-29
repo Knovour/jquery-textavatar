@@ -37,11 +37,13 @@ function urlSwitch(idFromUrl) {
 }
 
 function switchTo(hash) {
+  var toTop = $(hash).position().top;
+  var scorllbarPosition = $('#scroll-spy').scrollTop();
+  
   console.log(hash);
   $('#scroll-spy').animate({
-    scrollTop: $(hash).offset().top
-  }, 300, function(){
-  
+    scrollTop: toTop + scorllbarPosition
+  }, 300, function() {
     // when done, add hash to url
     // (default click behaviour)
     window.location.hash = hash;
