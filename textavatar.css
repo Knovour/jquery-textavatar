@@ -16,13 +16,3 @@
 	cursor: default !important;
 }
 
-
-.textavatar[data-cells=3] .row {
-	column-span: all; /* W3C */
-	-webkit-column-span: all; /* Safari & Chrome */
-	-moz-column-span: all; /* Firefox */
-	-ms-column-span: all; /* Internet Explorer */
-	-o-column-span: all; /* Opera */
-	display: table-row;
-}
-
