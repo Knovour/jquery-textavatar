@@ -3,7 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>text avatar demo</title>
-	<link rel="stylesheet" href="textavatar.css">
+	<!-- <link rel="stylesheet" href="textavatar.css"> -->
 	<style>
 		body {
 			padding-left: 12px;
@@ -15,12 +15,12 @@
 			margin-right: 16px;
 		}
 
-		.textavatar {
+	/*	.textavatar {
 			border-radius: 4px;
 			background-color: whitesmoke;
 			color: #535353;
 			margin-bottom: 6px;
-		}
+		}*/
 
 	</style>
 </head>
@@ -37,81 +37,81 @@
 	<h1>English</h1>
 	<h5>It will show only one word in small size(width &lt; 26px)</h5>
 	<div class='inline'>
-		<div class='textavatar' style='width: 120px;' data-name='Steve Rogers'></div>
+		<canvas class='textavatar' style='width: 120px;' data-name='Steve Rogers'></canvas>
 		<span>Steve Rogers</span>
 	</div>
 
 	<div class='inline'>
-		<div class='textavatar' style='width: 140px;' data-name='Tony Stark'></div>
+		<canvas class='textavatar' style='width: 140px;' data-name='Tony Stark'></canvas>
 		<span>Tony Stark</span>
 	</div>
 
 	<div class='inline'>
-		<div class='textavatar' style='width: 120px;' data-name='Thor Odinson'></div>
+		<canvas class='textavatar' style='width: 120px;' data-name='Thor Odinson'></canvas>
 		<span>Thor Odinson</span>
 	</div>
 
 	<div class='inline'>
-		<div class='textavatar' style='width: 90px;' data-name='Bruce Banner'></div>
+		<canvas class='textavatar' style='width: 90px;' data-name='Bruce Banner'></canvas>
 		<span>Bruce Banner</span>
 	</div>
 
 	<div class='inline'>
-		<div class='textavatar' style='width: 120px;' data-name='Natasha Romanoff'></div>
+		<canvas class='textavatar' style='width: 120px;' data-name='Natasha Romanoff'></canvas>
 		<span>Natasha Romanoff</span>
 	</div>
 
 	<div class='inline'>
-		<div class='textavatar' style='width: 130px;' data-name='Clint Barton'></div>
+		<canvas class='textavatar' style='width: 130px;' data-name='Clint Barton'></canvas>
 		<span>Clint Barton</span>
 	</div>
 
 	<div class='inline'>
-		<div class='textavatar' style='width: 80px;' data-name='Jarvis'></div>
+		<canvas class='textavatar' style='width: 80px;' data-name='Jarvis'></canvas>
 		<span>Jarvis</span>
 	</div>
 
 	<div class='inline'>
-		<div class='textavatar' style='width: 26px;' data-name='Loki Laufeyson'></div>
+		<canvas class='textavatar' style='width: 26px;' data-name='Loki Laufeyson'></canvas>
 		<span>Loki Laufeyson</span>
 	</div>
 
 	<h1 style='margin-top: 52px'>Chinese 中文</h1>
 	<h5>It will show only one word in Chinese. 中文字僅顯示一個字。</h5>
 	<div class='inline chinese-word'>
-		<div class='textavatar' style='width: 100px;' data-name='強尼戴普'></div>
+		<canvas class='textavatar' style='width: 100px;' data-name='強尼戴普'></canvas>
 		<span>強尼戴普</span>
 	</div>
 	<div class='inline chinese-word'>
-		<div class='textavatar' style='width: 100px;' data-name='莫那魯道'></div>
+		<canvas class='textavatar' style='width: 100px;' data-name='莫那魯道'></canvas>
 		<span>莫那魯道</span>
 	</div>
 	<div class='inline chinese-word'>
-		<div class='textavatar' style='width: 80px;' data-name='無名氏'></div>
+		<canvas class='textavatar' style='width: 80px;' data-name='無名氏'></canvas>
 		<span>無名氏</span>
 	</div>
 	<div class='inline chinese-word'>
-		<div class='textavatar' style='width: 80px;' data-name='某某人'></div>
+		<canvas class='textavatar' style='width: 80px;' data-name='某某人'></canvas>
 		<span>某某人</span>
 	</div>
 	<div class='inline chinese-word'>
-		<div class='textavatar' style='width: 20px;' data-name='水母'></div>
+		<canvas class='textavatar' style='width: 20px;' data-name='水母'></canvas>
 		<span>水母</span>
 	</div>
 
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="jquery.textavatar.js"></script>
+	<script src="jquery.textavatar_canvas.js"></script>
 	<script>
-		$('.textavatar').textAvatar();
+		$('canvas.textavatar').textAvatar();
 
-		$('input').on('keyup keydown keypress change', function() {
-			var name = $('#name').val();
-			var size = $('#size').val();
-			$('#test').textAvatar({
-				name: name,
-				width: size
-			});
-		});
+		// $('input').on('keyup keydown keypress change', function() {
+		// 	var name = $('#name').val();
+		// 	var size = $('#size').val();
+		// 	$('#test').textAvatar({
+		// 		name: name,
+		// 		width: size
+		// 	});
+		// });
 
 	</script>
 </body>
