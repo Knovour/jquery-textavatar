@@ -15,12 +15,13 @@
 			margin-right: 16px;
 		}
 
-	/*	.textavatar {
+		.textavatar {
 			border-radius: 4px;
-			background-color: whitesmoke;
-			color: #535353;
-			margin-bottom: 6px;
-		}*/
+		}
+
+		h5 {
+			margin-top: 0;
+		}
 
 	</style>
 </head>
@@ -32,86 +33,84 @@
 	<label for="size">Avatar Size (default = 48)：</label>
 	<input id='size' type="number" name='size' value=48>
 	<br>
-	<div id="test" class='textavatar' style='margin-top: 16px'></div>
+	<canvas id="test" class='textavatar' height=0 style='margin-top: 16px'></canvas>
 
 	<h1>English</h1>
 	<h5>It will show only one word in small size(width &lt; 26px)</h5>
 	<div class='inline'>
-		<canvas class='textavatar' style='width: 120px;' data-name='Steve Rogers'></canvas>
-		<span>Steve Rogers</span>
+		<canvas class='textavatar' style='width: 120px;' data-name='Steve Rogers' data-toggle="textavatar"></canvas>
+		<h5>Steve Rogers</h5>
 	</div>
 
 	<div class='inline'>
-		<canvas class='textavatar' style='width: 140px;' data-name='Tony Stark'></canvas>
-		<span>Tony Stark</span>
+		<canvas class='textavatar' style='width: 140px;' data-name='Tony Stark' data-toggle="textavatar"></canvas>
+		<h5>Tony Stark</h5>
 	</div>
 
 	<div class='inline'>
-		<canvas class='textavatar' style='width: 120px;' data-name='Thor Odinson'></canvas>
-		<span>Thor Odinson</span>
+		<canvas class='textavatar' style='width: 120px;' data-name='Thor Odinson' data-toggle="textavatar"></canvas>
+		<h5>Thor Odinson</h5>
 	</div>
 
 	<div class='inline'>
-		<canvas class='textavatar' style='width: 90px;' data-name='Bruce Banner'></canvas>
-		<span>Bruce Banner</span>
+		<canvas class='textavatar' style='width: 90px;' data-name='Bruce Banner' data-toggle="textavatar"></canvas>
+		<h5>Bruce Banner</h5>
 	</div>
 
 	<div class='inline'>
-		<canvas class='textavatar' style='width: 120px;' data-name='Natasha Romanoff'></canvas>
-		<span>Natasha Romanoff</span>
+		<canvas class='textavatar' style='width: 120px;' data-name='Natasha Romanoff' data-toggle="textavatar"></canvas>
+		<h5>Natasha Romanoff</h5>
 	</div>
 
 	<div class='inline'>
-		<canvas class='textavatar' style='width: 130px;' data-name='Clint Barton'></canvas>
-		<span>Clint Barton</span>
+		<canvas class='textavatar' style='width: 130px;' data-name='Clint Barton' data-toggle="textavatar"></canvas>
+		<h5>Clint Barton</h5>
 	</div>
 
 	<div class='inline'>
-		<canvas class='textavatar' style='width: 80px;' data-name='Jarvis'></canvas>
-		<span>Jarvis</span>
+		<canvas class='textavatar' style='width: 80px;' data-name='Jarvis' data-toggle="textavatar"></canvas>
+		<h5>Jarvis</h5>
 	</div>
 
 	<div class='inline'>
-		<canvas class='textavatar' style='width: 26px;' data-name='Loki Laufeyson'></canvas>
-		<span>Loki Laufeyson</span>
+		<canvas class='textavatar' style='width: 26px;' data-name='Loki Laufeyson' data-toggle="textavatar"></canvas>
+		<h5>Loki Laufeyson</h5>
 	</div>
 
 	<h1 style='margin-top: 52px'>Chinese 中文</h1>
 	<h5>It will show only one word in Chinese. 中文字僅顯示一個字。</h5>
 	<div class='inline chinese-word'>
-		<canvas class='textavatar' style='width: 100px;' data-name='強尼戴普'></canvas>
-		<span>強尼戴普</span>
+		<canvas class='textavatar' style='width: 100px;' data-name='強尼戴普' data-toggle="textavatar"></canvas>
+		<h5>強尼戴普</h5>
 	</div>
 	<div class='inline chinese-word'>
-		<canvas class='textavatar' style='width: 100px;' data-name='莫那魯道'></canvas>
-		<span>莫那魯道</span>
+		<canvas class='textavatar' style='width: 100px;' data-name='莫那魯道' data-toggle="textavatar"></canvas>
+		<h5>莫那魯道</h5>
 	</div>
 	<div class='inline chinese-word'>
-		<canvas class='textavatar' style='width: 80px;' data-name='無名氏'></canvas>
-		<span>無名氏</span>
+		<canvas class='textavatar' style='width: 80px;' data-name='無名氏' data-toggle="textavatar"></canvas>
+		<h5>無名氏</h5>
 	</div>
 	<div class='inline chinese-word'>
-		<canvas class='textavatar' style='width: 80px;' data-name='某某人'></canvas>
-		<span>某某人</span>
+		<canvas class='textavatar' style='width: 80px;' data-name='某某人' data-toggle="textavatar"></canvas>
+		<h5>某某人</h5>
 	</div>
 	<div class='inline chinese-word'>
-		<canvas class='textavatar' style='width: 20px;' data-name='水母'></canvas>
-		<span>水母</span>
+		<canvas class='textavatar' style='width: 20px;' data-name='水母' data-toggle="textavatar"></canvas>
+		<h5>水母</h5>
 	</div>
 
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 	<script src="jquery.textavatar_canvas.js"></script>
 	<script>
-		$('canvas.textavatar').textAvatar();
-
-		// $('input').on('keyup keydown keypress change', function() {
-		// 	var name = $('#name').val();
-		// 	var size = $('#size').val();
-		// 	$('#test').textAvatar({
-		// 		name: name,
-		// 		width: size
-		// 	});
-		// });
+		$('input').on('keyup keydown keypress change', function() {
+			var name = $('#name').val();
+			var size = $('#size').val();
+			$('#test').textAvatar({
+				name: name,
+				width: size
+			});
+		});
 
 	</script>
 </body>
