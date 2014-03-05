@@ -1,0 +1,23 @@
+{
+  "name": "jquery-textavatar",
+  "version": "0.0.6",
+  "homepage": "http://knovour.github.io/jquery-textavatar/",
+  "authors": [
+    "Knovour Zheng <knovourimba@gmail.com>"
+  ],
+  "description": "Let user name become an simple text avatar",
+  "main": "jquery.textavatar.js",
+  "keywords": [
+    "textavatar",
+    "avatar",
+    "jquery"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
