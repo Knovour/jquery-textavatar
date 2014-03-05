@@ -1,8 +1,10 @@
-// Text Avatar v0.0.1, 2013/10/14, Knovour Zheng
+// https://github.com/Knovour/jquery-textavatar
+
+
 (function ($) {
 	'use strict';
 
-	var _oneWord = 26; //26px
+	var _ONE_WORD = 26; //26px
 	$.fn.textAvatar = function(options) {
 		var _abbrTemplate = '<abbr title="_name_">_text_avatar_</abbr>';
 		var _reg = /[\u4E00-\u9FA5\uF900-\uFA2D]/i; //check Chinese, Japenese & Korean character
@@ -32,7 +34,7 @@
 			else
 				_tAvatar = _defaultOptions.name[0];
 
-			_tAvatar = (_defaultOptions.width <= _oneWord) ? _tAvatar[0] : _tAvatar;
+			_tAvatar = (_defaultOptions.width <= _ONE_WORD) ? _tAvatar[0] : _tAvatar;
 
 			var _newAbbr = _abbrTemplate
 				.replace(/_name_/i, _defaultOptions.name)
@@ -49,3 +51,7 @@
 
 	function _getFontSize(width) {return (width * 0.4 + 'px');}
 })(jQuery);
+
+$(function() {
+	$('[data-toggle="textavatar"]').textAvatar();
+});
