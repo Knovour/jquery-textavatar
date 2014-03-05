@@ -1,4 +1,6 @@
-// Text Avatar v0.0.1, 2013/10/14, Knovour Zheng
+// https://github.com/Knovour/jquery-textavatar
+
+
 (function ($) {
 	'use strict';
 
@@ -49,3 +51,7 @@
 
 	function _getFontSize(width) {return (width * 0.4 + 'px');}
 })(jQuery);
+
+$(function() {
+	$('[data-toggle="textavatar"]').textAvatar();
+});

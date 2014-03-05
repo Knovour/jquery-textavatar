@@ -1,4 +1,5 @@
-//jQuery Text Avatar v0.0.5, 2014/1/20, Knovour Zheng, MIT License
+// https://github.com/Knovour/jquery-textavatar
+
 (function ($) {
 	'use strict';
 
@@ -93,6 +94,8 @@
 		},
 		generateFont: function(width, fontFamily) {return (width * 0.52 + 'px ' + fontFamily);}
 	};
-
-	$(document).ready(function() {$('[data-toggle="textavatar"]').textAvatar();});
 })(jQuery);
+
+$(function() {
+	$('[data-toggle="textavatar"]').textAvatar();
+});
