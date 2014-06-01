@@ -137,7 +137,7 @@ header h1 .inline {
 .textavatar {
   display: table;
   border-radius: 4px;
-  background-color: whitesmoke;
+  background-color: lightgrey;
   color: #535353;
   margin-bottom: 6px;
 }
