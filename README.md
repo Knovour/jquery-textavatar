@@ -4,6 +4,11 @@ Let user name become an simple text avatar
 #### [Site]
 
 ## Usage
+
+```bash
+bower i jquery.textavatar --save
+```
+
 Load **textavatar.css** or just combine it in your css file.
 jQuery is needed.
 
