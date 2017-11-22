@@ -1,17 +1,183 @@
+html,body {
+  font-family: 微軟正黑體,Arial,Helvetica,sans-serif,'STHeiti Light','儷黑 Pro','LiHei Pro','Microsoft Yahei','Microsoft JhengHei',新細明體;
+}
+
+/*bootstrap init*/
+input,
+select,
+button,
+select,
+.btn,
+.btn.active,
+.form-control,
+.well,
+.alert,
+.panel,
+.panel-heading,
+.label,
+.modal-content,
+.btn-group-vertical .btn {
+  border-radius: 0 !important;
+  box-shadow: none;
+}
+
+.custom-select:after {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  vertical-align: middle;
+  border-top: 6px solid #333333;
+  border-right: 6px solid transparent;
+  border-bottom: 0 dotted;
+  border-left: 6px solid transparent;
+  content: "";
+  top: 15px;
+  right: 22px;
+  position: absolute;
+}
+
+.custom-select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: lightgrey;
+}
+
+input:focus,
+select:focus {
+  box-shadow: none !important;
+}
+
+.label {
+  padding: 3.6px 8px;
+}
+
+pre {
+  border: 0 !important;
+  border-radius: 0 !important;
+}
+
+/*
+.alert,
+.panel,
+.panel-heading,
+.btn,
+.modal-content {
+  border: 0;
+}
+
+.btn-group .btn:first-child {
+  border-left: 0;
+}
+
+.btn-group .btn:last-child {
+  border-right: 0;
+}
+
+.btn-group .btn-default {
+  border-right: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+}
+*/
+
+header h1,
+header h1 .inline,
+header h1 .inline .textavatar {
+  margin: 0;
+}
+
+header h1 .inline {
+  margin-bottom: -1.5px;
+}
+
+header h1 span,
+header h1 .inline {
+  vertical-align: bottom;
+}
+
+#main-nav {
+  padding-bottom: 32px;
+}
+
+#main-nav a {
+  border-radius: 0 !important;
+}
+
+.banner {
+  padding: 40px 0;
+}
+
+.nav-pills > li > a {
+  text-align: right;
+}
+
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  text-align: right;
+  color: #31343D;
+  background-color: #DFDFDF;
+}
+
+#scroll-spy {
+  height: 80vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding-bottom: 70px;
+}
+
+.simple-title {
+  margin-top: 0;
+}
+
+.inline {
+  display: inline-block;
+  margin-right: 16px;
+}
+
 .textavatar {
-	display: table;
+  display: table;
+  border-radius: 4px;
+  background-color: lightgrey;
+  color: #535353;
+  margin-bottom: 6px;
 }
 
 .textavatar abbr {
-	display: table-cell;
-	text-align: center;
-	vertical-align: middle;
-	font-weight: bold;
-	line-height: 1em;
-	padding-left: .1em;
-	letter-spacing: .1em;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  font-weight: bold;
+  line-height: 1em;
+  padding-left: .1em;
+  letter-spacing: .1em;
+  text-decoration: none;
 
-	/* Avoid Bootstrap css*/
-	border-bottom: 0 !important;
-	cursor: default !important;
+  /* Avoid Bootstrap css*/
+  border-bottom: 0 !important;
+  cursor: default !important;
+}
+
+footer.hidden-sm {
+  width: 270px;
+  float: left;
+  position: fixed;
+  bottom: 40px;
+}
+
+footer.visible-sm {
+  padding: 32px 0;
+}
+
+@media(max-width: 766px) {
+  header .pull-right {
+    float: left !important;
+  }
+  
+  #main-nav a {
+    text-align: left;
+  }
+    
+  #scroll-spy {
+    height: 100%;
+  }
 }
