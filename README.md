@@ -13,7 +13,7 @@ npm i jquery.textavatar
 
 Load **textavatar.css** or just merge to your css file.
 
-#### jQuery
+### jQuery
 ```html
 <div class='textavatar' style='width: 140px;' data-name='NAME INSIDE'></div>
 <script src="jquery.textavatar.js"></script>
@@ -36,7 +36,7 @@ $('DIV-NAME').textAvatar({
 })
 ```
 
-#### VanillaJS
+### VanillaJS
 ```html
 <div class='textavatar' style='width: 140px;' data-name='NAME INSIDE'></div>
 ```
