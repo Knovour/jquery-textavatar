@@ -1,0 +1,23 @@
+{
+  "name": "jquery-textavatar",
+  "version": "1.0.0",
+  "description": "Let user name become an simple text avatar",
+  "main": "jquery.textavatar.js",
+  "scripts": {
+    "build:iife": "rollup textavatar.js --file textavatar.iife.js --format iife --name textAvatar",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Knovour/jquery-textavatar.git"
+  },
+  "author": "Knovour",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Knovour/jquery-textavatar/issues"
+  },
+  "homepage": "https://github.com/Knovour/jquery-textavatar#readme",
+  "devDependencies": {
+    "rollup": "^1.10.0"
+  }
+}
