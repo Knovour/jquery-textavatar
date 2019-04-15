@@ -6,7 +6,7 @@
 	<link rel="stylesheet" href="textavatar.css">
 	<style>
 		body {
-			padding-left: 12px;
+			padding: 16px;
 		}
 
 		.inline {
@@ -15,13 +15,13 @@
 			margin-right: 16px;
 		}
 
+		[data-toggle="textavatar"],
 		.textavatar {
 			border-radius: 4px;
 			background-color: whitesmoke;
 			color: #535353;
 			margin-bottom: 6px;
 		}
-
 	</style>
 </head>
 <body>
@@ -32,87 +32,82 @@
 	<label for="size">Avatar Size (default = 48)：</label>
 	<input id='size' type="number" name='size' value=48>
 	<br>
-	<div id="test" class='textavatar' style='margin-top: 16px'></div>
+	<div id="test" class="textavatar" style='margin-top: 16px'></div>
 
 	<h1>English</h1>
 	<h5>It will show only one word in small size(width &lt; 26px)</h5>
 	<div class='inline'>
-		<div class='textavatar' style='width: 120px;' data-name='Steve Rogers'></div>
+		<div style='width: 120px;' data-toggle="textavatar" data-name='Steve Rogers'></div>
 		<span>Steve Rogers</span>
 	</div>
 
 	<div class='inline'>
-		<div class='textavatar' style='width: 140px;' data-name='Tony Stark'></div>
+		<div style='width: 140px;' data-toggle="textavatar" data-name='Tony Stark'></div>
 		<span>Tony Stark</span>
 	</div>
 
 	<div class='inline'>
-		<div class='textavatar' style='width: 120px;' data-name='Thor Odinson'></div>
+		<div style='width: 120px;' data-toggle="textavatar" data-name='Thor Odinson'></div>
 		<span>Thor Odinson</span>
 	</div>
 
 	<div class='inline'>
-		<div class='textavatar' style='width: 90px;' data-name='Bruce Banner'></div>
+		<div style='width: 90px;' data-toggle="textavatar" data-name='Bruce Banner'></div>
 		<span>Bruce Banner</span>
 	</div>
 
 	<div class='inline'>
-		<div class='textavatar' style='width: 120px;' data-name='Natasha Romanoff'></div>
+		<div style='width: 120px;' data-toggle="textavatar" data-name='Natasha Romanoff'></div>
 		<span>Natasha Romanoff</span>
 	</div>
 
 	<div class='inline'>
-		<div class='textavatar' style='width: 130px;' data-name='Clint Barton'></div>
+		<div style='width: 130px;' data-toggle="textavatar" data-name='Clint Barton'></div>
 		<span>Clint Barton</span>
 	</div>
 
 	<div class='inline'>
-		<div class='textavatar' style='width: 80px;' data-name='Jarvis'></div>
+		<div style='width: 80px;' data-toggle="textavatar" data-name='Jarvis'></div>
 		<span>Jarvis</span>
 	</div>
 
 	<div class='inline'>
-		<div class='textavatar' style='width: 26px;' data-name='Loki Laufeyson'></div>
+		<div style='width: 26px;' data-toggle="textavatar" data-name='Loki Laufeyson'></div>
 		<span>Loki Laufeyson</span>
 	</div>
 
 	<h1 style='margin-top: 52px'>Chinese 中文</h1>
 	<h5>It will show only one word in Chinese. 中文字僅顯示一個字。</h5>
 	<div class='inline chinese-word'>
-		<div class='textavatar' style='width: 100px;' data-name='強尼戴普'></div>
+		<div style='width: 100px;' data-toggle="textavatar" data-name='強尼戴普'></div>
 		<span>強尼戴普</span>
 	</div>
 	<div class='inline chinese-word'>
-		<div class='textavatar' style='width: 100px;' data-name='莫那魯道'></div>
+		<div style='width: 100px;' data-toggle="textavatar" data-name='莫那魯道'></div>
 		<span>莫那魯道</span>
 	</div>
 	<div class='inline chinese-word'>
-		<div class='textavatar' style='width: 80px;' data-name='無名氏'></div>
+		<div style='width: 80px;' data-toggle="textavatar" data-name='無名氏'></div>
 		<span>無名氏</span>
 	</div>
 	<div class='inline chinese-word'>
-		<div class='textavatar' style='width: 80px;' data-name='某某人'></div>
+		<div style='width: 80px;' data-toggle="textavatar" data-name='某某人'></div>
 		<span>某某人</span>
 	</div>
 	<div class='inline chinese-word'>
-		<div class='textavatar' style='width: 20px;' data-name='水母'></div>
+		<div style='width: 20px;' data-toggle="textavatar" data-name='水母'></div>
 		<span>水母</span>
 	</div>
 
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="jquery.textavatar.js"></script>
+	<script src="textavatar.iife.js"></script>
 	<script>
-		$('.textavatar').textAvatar();
-
-		$('input').on('keyup keydown keypress change', function() {
-			var name = $('#name').val();
-			var size = $('#size').val();
-			$('#test').textAvatar({
-				name: name,
-				width: size
-			});
-		});
-
+		$('input').on('keyup keydown keypress change', function () {
+			textAvatar(document.querySelector('#test') ,{
+				name: $('#name').val(),
+				width: $('#size').val()
+			})
+		})
 	</script>
 </body>
 </html>

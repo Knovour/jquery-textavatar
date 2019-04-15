@@ -1,24 +1,25 @@
-jQuery Text Avatar
+jQuery Text Avatar (include vanillajs version)
 =================
-Let user name become an simple text avatar
-#### [Site]
+Let user name become a simple text avatar
+#### [Demo]
 
 ## Usage
 
+For older version check [here](https://github.com/Knovour/jquery-textavatar/tree/old)
+
 ```bash
-bower i jquery.textavatar --save
+npm i jquery.textavatar
 ```
 
-Load **textavatar.css** or just combine it in your css file.
-jQuery is needed.
+Load **textavatar.css** or just merge to your css file.
 
-#### Normal use
+#### jQuery
 ```html
 <div class='textavatar' style='width: 140px;' data-name='NAME INSIDE'></div>
 <script src="jquery.textavatar.js"></script>
 ```
 ```javascript
-$('.textavatar').textAvatar();
+$('.textavatar').textAvatar()
 ```
 #### Auto Create
 ```html
@@ -32,33 +33,42 @@ There is only **width** and **name** now.
 $('DIV-NAME').textAvatar({
     width: 120, //no need to type 'px'
     name: NAME HERE
-});
+})
 ```
 
-## The MIT License (MIT)
+#### VanillaJS
+```html
+<div class='textavatar' style='width: 140px;' data-name='NAME INSIDE'></div>
+```
 
-Copyright (c) 2013 Knovour Zheng
+For es6 module
+```javascript
+import textAvatar from 'textavatar.js'
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+textAvatar(document.querySelector('.textavatar'))
+```
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+For normal usage
+```html
+<script src="textavatar.iife.js"></script>
+```
 
 
+#### Auto Create
+```html
+<div class='textavatar' style='width: 140px;' data-name="NAME INSIDE" data-toggle="textavatar"></div>
+```
 
-> Written with [StackEdit](https://stackedit.io/).
 
-[Site]: http://knovour.github.io/jquery-textavatar
+#### Options
+There is only **width** and **name** now.
+```javascript
+textAvatar(document.querySelector('DIV-NAME'), {
+    width: 120, //no need to type 'px'
+    name: NAME HERE
+})
+```
+
+## MIT License
+
+[Demo]: http://knovour.github.io/jquery-textavatar
