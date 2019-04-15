@@ -1,15 +1,17 @@
+[data-toggle="textavatar"],
 .textavatar {
 	display: table;
 }
 
+[data-toggle="textavatar"] abbr,
 .textavatar abbr {
 	display: table-cell;
 	text-align: center;
 	vertical-align: middle;
 	font-weight: bold;
-	line-height: 1em;
-	padding-left: .1em;
+	line-height: 1;
 	letter-spacing: .1em;
+	text-indent: .1em;
 	text-decoration: none;
 
 	/* Avoid Bootstrap css*/

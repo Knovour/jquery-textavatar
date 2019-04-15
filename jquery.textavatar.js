@@ -1,57 +1,37 @@
 // https://github.com/Knovour/jquery-textavatar
 
+;($ => {
+	const ONE_WORD_WIDTH = 26
+	const ASIA_CHAR_REG = /[\u4E00-\u9FA5\uF900-\uFA2D]/ig //check Chinese, Japenese & Korean character
 
-(function ($) {
-	'use strict';
+	$.fn.textAvatar = function (options = {}) {
+		$(this).each(function () {
+			if (!$(this).data('name') && !options.name)
+				return
 
-	var _ONE_WORD = 26; //26px
-	$.fn.textAvatar = function(options) {
-		var _abbrTemplate = '<abbr title="_name_">_text_avatar_</abbr>';
-		var _reg = /[\u4E00-\u9FA5\uF900-\uFA2D]/i; //check Chinese, Japenese & Korean character
-
-		var _contentLength = this.length;
-		for(var i = 0; i < _contentLength; i++) {
-			// tAvatar => textAvatar
-			var _tAvatarContent = this.eq(i);
-			var _defaultOptions = {
-				name: (!_tAvatarContent.data('name')) ? '' : _tAvatarContent.data('name').trim(),
-				width: _tAvatarContent.width(),
-			};
-
-			$.extend(_defaultOptions, options);
-
-			var _tAvatar = '';
-			if(!_reg.test(_defaultOptions.name)) {
-				//(/ +/g, ' '): replace multi space to one space, prevent typing error
-				var text = _defaultOptions.name.replace(/ +/g, ' ').split(' ');
-				var length = (text.length > 2) ? 2 : text.length;
-				for(var j = 0; j < length; j++) {
-					var temp = text[j].trim()[0];
-					_tAvatar += (temp !== undefined) ? temp.toUpperCase() : '';
-				}
+			const defaultOptions = {
+				name: (options.name || $(this).data('name')).trim(),
+				width: parseFloat(options.width || $(this).width())
 			}
 
-			else
-				_tAvatar = _defaultOptions.name[0];
+			const name = defaultOptions.name
+				.replace(/ +/g, ' ')  // Replace multi space to one space, prevent typing error
+				.trim()
+				.toUpperCase()
+				.split(' ')
 
-			_tAvatar = (_defaultOptions.width <= _ONE_WORD) ? _tAvatar[0] : _tAvatar;
+			const isTwoWord = !ASIA_CHAR_REG.test(defaultOptions.name) && name.length > 1 && defaultOptions.width > ONE_WORD_WIDTH
+			const avatarContent = isTwoWord ? `${name[0][0]}${name[name.length - 1][0]}` : name[0][0]
 
-			var _newAbbr = _abbrTemplate
-				.replace(/_name_/i, _defaultOptions.name)
-				.replace(/_text_avatar_/i, _tAvatar);
+			$(this)
+				.html(`<abbr title="${defaultOptions.name}">${avatarContent}</abbr>`)
+				.css({
+					width: defaultOptions.width,
+					height: defaultOptions.width,
+					'font-size': `${defaultOptions.width * 0.4}px`
+				})
+		})
+	}
+})(jQuery)
 
-			var _avatarWidth = _defaultOptions.width;
-			_tAvatarContent.html(_newAbbr).css({
-				width: _avatarWidth,
-				height: _avatarWidth,
-				'font-size': _getFontSize(_avatarWidth)
-			});
-		}
-	};
-
-	function _getFontSize(width) {return (width * 0.4 + 'px');}
-})(jQuery);
-
-$(function() {
-	$('[data-toggle="textavatar"]').textAvatar();
-});
+$(() => $('[data-toggle="textavatar"]').textAvatar())
