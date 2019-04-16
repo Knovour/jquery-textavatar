@@ -100,10 +100,10 @@
 	</div>
 
 	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-	<script src="textavatar.iife.js"></script>
+	<script src="jquery.textavatar.js"></script>
 	<script>
 		$('input').on('keyup keydown keypress change', function () {
-			textAvatar(document.querySelector('#test') ,{
+			$('#test').textAvatar({
 				name: $('#name').val(),
 				width: $('#size').val()
 			})

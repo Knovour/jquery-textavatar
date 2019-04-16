@@ -1,6 +1,6 @@
 {
   "name": "jquery-textavatar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Let user name become an simple text avatar",
   "main": "jquery.textavatar.js",
   "scripts": {

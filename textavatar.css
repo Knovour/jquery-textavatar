@@ -1,13 +1,12 @@
 [data-toggle="textavatar"],
 .textavatar {
-	display: table;
+	display: flex;
+	justify-content: center;
+	align-items: center;
 }
 
 [data-toggle="textavatar"] abbr,
 .textavatar abbr {
-	display: table-cell;
-	text-align: center;
-	vertical-align: middle;
 	font-weight: bold;
 	line-height: 1;
 	letter-spacing: .1em;
